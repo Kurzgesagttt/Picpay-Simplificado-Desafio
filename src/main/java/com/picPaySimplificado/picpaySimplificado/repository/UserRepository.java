@@ -1,5 +1,7 @@
 package com.picPaySimplificado.picpaySimplificado.repository;
 
-public class UserRepository {
-    
+import com.picPaySimplificado.picpaySimplificado.model.user.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User,Long> {
 }
