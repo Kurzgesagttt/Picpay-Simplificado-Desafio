@@ -1,5 +1,0 @@
-DB_URL: jdbc:h2:mem:testdb
-DB_USERNAME: root
-DB_PASSWORD:
-DB_DRIVER: org.h2.Driver
-DB_DIALECT: org.hibernate.dialect.H2Dialect
