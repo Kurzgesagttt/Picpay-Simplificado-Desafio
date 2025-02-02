@@ -1,5 +1,6 @@
 package com.picPaySimplificado.picpaySimplificado.controller;
 
+import com.picPaySimplificado.picpaySimplificado.dto.UserDTO;
 import com.picPaySimplificado.picpaySimplificado.model.user.User;
 import com.picPaySimplificado.picpaySimplificado.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,9 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<User> createUser(UserDTO user){
-        //TODO
 
+
+        
     }
 
 
