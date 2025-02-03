@@ -34,12 +34,12 @@ public class User {
     private UserTypes userType;
 
     public User(UserTypes userType, BigDecimal balance, String password, String email, String lastName, String document, String firstName) {
-        this.userType = userType;
         this.balance = balance;
         this.password = password;
         this.email = email;
         this.lastName = lastName;
         this.document = document;
+        this.userType = userType;
         this.firstName = firstName;
 
     }

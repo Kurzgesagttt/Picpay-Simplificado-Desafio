@@ -31,12 +31,6 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction(TransactionDTO data){
-        this.sender = data.senderId();
-        this.receiver = data.senderId();
-        this.amount = data.value();
-    }
-
     public Transaction(LocalDateTime timestamp, User receiver, User sender, BigDecimal amount) {
         this.timestamp = timestamp;
         this.receiver = receiver;
