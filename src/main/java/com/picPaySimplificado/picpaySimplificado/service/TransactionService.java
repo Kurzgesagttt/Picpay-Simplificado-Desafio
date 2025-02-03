@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -20,6 +21,7 @@ public class TransactionService {
 
     @Autowired
     private TransactionRepository transactionRepository;
+
     @Autowired
     private RestTemplate template;
 
@@ -59,6 +61,10 @@ public class TransactionService {
             String message = (String) authorizationResponse.getBody().get("status");
             return "success".equalsIgnoreCase(message);
         }else return false;
+    }
+
+    public List<Transaction> getAllTransaction(){
+        return transactionRepository.findAll();
     }
 
 }
