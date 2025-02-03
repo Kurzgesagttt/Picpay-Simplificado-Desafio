@@ -24,7 +24,7 @@ public class TransactionService {
     private RestTemplate template;
 
 
-    public void createTransacion(TransactionDTO transaction) throws Exception {
+    public Transaction createTransacion(TransactionDTO transaction) throws Exception {
         User sender = this.userService.findById(transaction.senderId());
         User receiver = this.userService.findById(transaction.receiverId());
 
@@ -47,6 +47,8 @@ public class TransactionService {
         this.transactionRepository.save(newTransaction);
         this.userService.saveUser(sender);
         this.userService.saveUser(receiver);
+
+        return newTransaction;
 
     }
 
