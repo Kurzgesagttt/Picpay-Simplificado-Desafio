@@ -14,7 +14,6 @@ public class ControllerExceptionHandler {
     public ResponseEntity threatDuplicateEntry(DataIntegrityViolationException exception){
         ExceptionDTO exceptionDTO = new ExceptionDTO("Usuario ja cadastrado","400");
         return ResponseEntity.badRequest().body(exceptionDTO);
-
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
@@ -25,7 +24,8 @@ public class ControllerExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity threatGeneralException(Exception exception){
-        
+        ExceptionDTO exceptionDTO = new ExceptionDTO(exception.getMessage(), "500");
+        return ResponseEntity.internalServerError().body(exceptionDTO);
     }
 
 }
